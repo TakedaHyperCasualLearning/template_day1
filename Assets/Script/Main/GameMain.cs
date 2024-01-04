@@ -13,6 +13,7 @@ namespace Donuts
         [SerializeField] protected float fadePeriod = 0.3f;
         [SerializeField] protected string sceneName = "GameScene";
         [SerializeField] private GameObject objectRoot;
+        [SerializeField] private GameObject cameraObject;
 
         [SerializeField] private GameStat gameStat;
         private void Awake()
@@ -36,6 +37,7 @@ namespace Donuts
                 if (entity == null) continue;
                 masterSystem.gameEvent.onSpawnedEntity(entity.ToEntity());
             }
+            masterSystem.gameEvent.onSpawnedEntity(cameraObject.GetComponent<EntityComponent>().ToEntity());
 
             Debug.Log("GameMain Start");
             masterSystem.gameEvent.onFirstInitialize?.Invoke();
@@ -51,10 +53,17 @@ namespace Donuts
             new PlayerInputSystem(),
             new CharacterMoveSystem(),
             new PlayerAttackSystem(),
-            new BulletMoveSystem(),
+            new HitPointSystem(),
 
-            // new EnemySpawnSystem(),
+            new BulletMoveSystem(),
+            new BulletHitSystem(),
+
+            new EnemySpawnSystem(),
             new EnemyMoveSystem(),
+
+            new DamageSystem(),
+
+            new CameraMoveSystem(),
 
             new GameRuleSystem()
             );

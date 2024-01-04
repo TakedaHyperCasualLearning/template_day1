@@ -99,6 +99,7 @@ MonoBehaviour:
   components:
   - rid: 1036980296228536332
   - rid: 1036980296228536333
+  - rid: 1036980296228536334
   references:
     version: 2
     RefIds:
@@ -112,3 +113,7 @@ MonoBehaviour:
       data:
         lifetime: 5
         timeCount: 0
+    - rid: 1036980296228536334
+      type: {class: BulletAttackComponent, ns: , asm: Assembly-CSharp}
+      data:
+        attackPoint: 1

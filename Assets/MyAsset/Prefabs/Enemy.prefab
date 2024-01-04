@@ -99,13 +99,14 @@ MonoBehaviour:
   components:
   - rid: 1036980296228536326
   - rid: 1036980296228536327
+  - rid: 1036980296228536337
   references:
     version: 2
     RefIds:
     - rid: 1036980296228536326
       type: {class: CharacterBaseComponent, ns: , asm: Assembly-CSharp}
       data:
-        hitPointMax: 0
+        hitPointMax: 10
         hitPoint: 0
     - rid: 1036980296228536327
       type: {class: CharacterMoveComponent, ns: , asm: Assembly-CSharp}
@@ -113,3 +114,7 @@ MonoBehaviour:
         direction: {x: 0, y: 0, z: 0}
         speed: 1
         targetPosition: {x: 0, y: 0, z: 0}
+    - rid: 1036980296228536337
+      type: {class: DamageComponent, ns: , asm: Assembly-CSharp}
+      data:
+        damagePoint: 0
