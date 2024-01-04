@@ -81,7 +81,13 @@ namespace Donuts
             componentChunks[id].Iterate(callback, deltaTime);
         }
 
-        public Entity GetFirst<T>() where T: ComponentGroup
+        public void Foreach<T1, T2>(Action<T1, T2> callback, T2 amount) where T1 : ComponentGroup
+        {
+            int id = ECSDefinition.GetComponentGroupIDSlot(typeof(T1));
+            componentChunks[id].Iterate(callback, amount);
+        }
+
+        public Entity GetFirst<T>() where T : ComponentGroup
         {
             int id = ECSDefinition.GetComponentGroupIDSlot(typeof(T));
             return componentChunks[id].GetFirstEntity();

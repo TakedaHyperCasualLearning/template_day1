@@ -12,6 +12,7 @@ namespace Donuts
         [SerializeField] protected FadeLayer fadeLayer;
         [SerializeField] protected float fadePeriod = 0.3f;
         [SerializeField] protected string sceneName = "GameScene";
+        [SerializeField] private GameObject objectRoot;
 
         [SerializeField] private GameStat gameStat;
         private void Awake()
@@ -27,11 +28,23 @@ namespace Donuts
             SetupMasterSystem();
             yield return fadeLayer.FadeIn(fadePeriod);
             FinishedLoading();
+
+
+            for (int i = 0; i < objectRoot.transform.childCount; i++)
+            {
+                EntityComponent entity = objectRoot.transform.GetChild(i).GetComponent<EntityComponent>();
+                if (entity == null) continue;
+                masterSystem.gameEvent.onSpawnedEntity(entity.ToEntity());
+            }
         }
 
         private void SetupMasterSystem()
         {
-            masterSystem = new MasterSystem(gameStat);
+            masterSystem = new MasterSystem(gameStat,
+            new TouchSystem(),
+
+            new PlayerInputSystem(),
+            new CharacterMoveSystem());
         }
 
         private void FinishedLoading()

@@ -100,6 +100,19 @@ namespace Donuts
             }
         }
 
+        public void Iterate<T1, T2>(Action<T1, T2> callBack, T2 amount) where T1 : ComponentGroup
+        {
+            int count = groups.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                if (groups[i].isActivated)
+                {
+                    callBack((T1)groups[i], amount);
+                }
+            }
+        }
+
         public List<Entity> GetEntityCloseToPoint(Vector3 position, float distance)
         {
             int count = groups.Count;
