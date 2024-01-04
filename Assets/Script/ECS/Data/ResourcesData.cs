@@ -7,6 +7,6 @@ namespace Donuts
     [CreateAssetMenu(fileName = "ResourcesData", menuName = "ECS/ResourcesData")]
     public partial class ResourcesData : ScriptableObject
     {
-
+        public GameObject enemyPrefab;
     }
 }

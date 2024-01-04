@@ -20,6 +20,7 @@ namespace Donuts
             updater = gameObject.AddComponent<GameMainUpdater>();
             updater.enabled = false;
             fadeLayer.ForceOverlay();
+            gameStat = new GameStat();
         }
 
         private IEnumerator Start()
@@ -29,22 +30,31 @@ namespace Donuts
             yield return fadeLayer.FadeIn(fadePeriod);
             FinishedLoading();
 
-
             for (int i = 0; i < objectRoot.transform.childCount; i++)
             {
                 EntityComponent entity = objectRoot.transform.GetChild(i).GetComponent<EntityComponent>();
                 if (entity == null) continue;
                 masterSystem.gameEvent.onSpawnedEntity(entity.ToEntity());
             }
+
+            Debug.Log("GameMain Start");
+            masterSystem.gameEvent.onFirstInitialize?.Invoke();
         }
 
         private void SetupMasterSystem()
         {
             masterSystem = new MasterSystem(gameStat,
             new TouchSystem(),
+            new PoolSystem(),
 
             new PlayerInputSystem(),
-            new CharacterMoveSystem());
+            new CharacterMoveSystem(),
+
+            // new EnemySpawnSystem(),
+            new EnemyMoveSystem(),
+
+            new GameRuleSystem()
+            );
         }
 
         private void FinishedLoading()
@@ -63,6 +73,5 @@ namespace Donuts
             yield return fadeLayer.FadeOut(fadePeriod);
             SceneManager.LoadScene(sceneName);
         }
-
     }
 }

@@ -6,4 +6,6 @@ namespace Donuts
     public partial class GameStat
     {
     }
+
+
 }

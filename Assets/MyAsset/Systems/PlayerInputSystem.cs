@@ -28,7 +28,7 @@ public class PlayerInputSystem : AGameSystem, IUpdateSystem
         Vector3 mousePos = pos;
         Vector3 direction = mousePos - playerPos;
         direction.z = 0.0f;
-        group.data2.direction = direction.normalized;
+        group.data2.direction = new Vector3(direction.x, 0.0f, direction.y).normalized;
     }
 
     private void InputChancel(Vector3 pos)

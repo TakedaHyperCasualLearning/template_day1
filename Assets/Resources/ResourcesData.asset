@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39241c24f6af461ebbdb9bb35fe8eb9, type: 3}
   m_Name: ResourcesData
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 7175297965933932134, guid: 22fb79a60559748ab946d4c7223f4c50, type: 3}

@@ -10,6 +10,7 @@ namespace Donuts
         public Action<Entity> onRemovedEntity;
         public Action onFinishedPreload;
         public Action<GameObject> onRemoveGameObject;
-        
+        public Action onFirstInitialize;
+
     }
 }
