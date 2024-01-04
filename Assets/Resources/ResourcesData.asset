@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ResourcesData
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7175297965933932134, guid: 22fb79a60559748ab946d4c7223f4c50, type: 3}
+  bulletPrefab: {fileID: 3291840554526666610, guid: 6ed1f9854bf034d2586874e7364e804b, type: 3}

@@ -32,9 +32,7 @@ namespace Donuts
 
         public void SetupPlayer(PlayerGroup group)
         {
-            Debug.Log("SetupPlayer");
             if (group.data1 == null) return;
-            Debug.Log(gameStat);
             gameStat.playerGroup = group;
         }
     }

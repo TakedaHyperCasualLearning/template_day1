@@ -15,7 +15,6 @@ public class EnemyMoveSystem : AGameSystem, IUpdateSystem
     {
         group.data2.targetPosition = gameStat.playerGroup.entity.transform.position;
         Vector3 direction = (group.data2.targetPosition - group.entity.transform.position).normalized;
-        Debug.Log(direction);
         group.data2.direction = (group.data2.targetPosition - group.entity.transform.position).normalized;
     }
 }

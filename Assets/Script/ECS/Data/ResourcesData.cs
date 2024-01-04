@@ -8,5 +8,6 @@ namespace Donuts
     public partial class ResourcesData : ScriptableObject
     {
         public GameObject enemyPrefab;
+        public GameObject bulletPrefab;
     }
 }

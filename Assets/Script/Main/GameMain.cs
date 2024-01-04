@@ -46,9 +46,12 @@ namespace Donuts
             masterSystem = new MasterSystem(gameStat,
             new TouchSystem(),
             new PoolSystem(),
+            new LifeTimeSystem(),
 
             new PlayerInputSystem(),
             new CharacterMoveSystem(),
+            new PlayerAttackSystem(),
+            new BulletMoveSystem(),
 
             // new EnemySpawnSystem(),
             new EnemyMoveSystem(),
