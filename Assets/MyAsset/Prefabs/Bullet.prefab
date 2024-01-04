@@ -106,7 +106,7 @@ MonoBehaviour:
       type: {class: BulletMoveComponent, ns: , asm: Assembly-CSharp}
       data:
         direction: {x: 0, y: 0, z: 0}
-        speed: 5
+        speed: 7
     - rid: 1036980296228536333
       type: {class: LifeTimeComponent, ns: Donuts, asm: Assembly-CSharp}
       data:

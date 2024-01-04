@@ -37,9 +37,8 @@ public class PlayerAttackSystem : AGameSystem, IUpdateSystem
         Entity bullet = gameFunction.onSpawnEntityFromPool?.Invoke(Singleton.instance.resourceData.bulletPrefab.GetComponent<EntityComponent>());
         gameEvent.onSpawnedEntity?.Invoke(bullet);
         bullet.transform.position = group.entity.transform.position;
-        bullet.GetComponent<BulletMoveComponent>().direction = group.data2.direction;
-        Debug.Log("direction1" + group.data2.direction);
-        Debug.Log("direction2" + bullet.GetComponent<BulletMoveComponent>().direction);
+        Debug.Log("direction" + group.entity.transform.forward);
+        bullet.GetComponent<BulletMoveComponent>().direction = group.entity.transform.forward;
         group.data1.isCanShot = false;
     }
 }

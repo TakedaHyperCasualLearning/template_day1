@@ -29,6 +29,12 @@ public class PlayerInputSystem : AGameSystem, IUpdateSystem
         Vector3 direction = mousePos - playerPos;
         direction.z = 0.0f;
         group.data2.direction = new Vector3(direction.x, 0.0f, direction.y).normalized;
+
+        Vector3 playerPoint = Camera.main.WorldToScreenPoint(group.entity.transform.position);
+        Vector3 rotationDirection = Input.mousePosition - playerPoint;
+        rotationDirection = rotationDirection.normalized;
+        rotationDirection.z = 0.0f;
+        group.data2.targetPosition = Camera.main.ScreenToWorldPoint(playerPoint + rotationDirection);
     }
 
     private void InputChancel(Vector3 pos)

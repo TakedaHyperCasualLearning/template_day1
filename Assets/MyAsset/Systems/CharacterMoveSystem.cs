@@ -21,5 +21,6 @@ public class CharacterMoveSystem : AGameSystem, IUpdateSystem
         group.entity.transform.LookAt(group.data1.targetPosition);
 
         group.entity.transform.position += group.data1.direction * group.data1.speed * deltaTime;
+        // group.entity.transform.Translate(group.data1.direction * group.data1.speed * deltaTime, Space.Self);
     }
 }
