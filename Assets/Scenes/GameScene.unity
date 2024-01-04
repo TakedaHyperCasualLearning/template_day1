@@ -224,6 +224,7 @@ MonoBehaviour:
   components:
   - rid: 1036980296228536320
   - rid: 1036980296228536321
+  - rid: 1036980296228536322
   references:
     version: 2
     RefIds:
@@ -235,6 +236,10 @@ MonoBehaviour:
         targetPosition: {x: 0, y: 0, z: 0}
     - rid: 1036980296228536321
       type: {class: PlayerInputComponent, ns: , asm: Assembly-CSharp}
+    - rid: 1036980296228536322
+      type: {class: CharacterBaseComponent, ns: , asm: Assembly-CSharp}
+      data:
+        hitPointMax: 100
 --- !u!23 &475453282
 MeshRenderer:
   m_ObjectHideFlags: 0
